@@ -12,9 +12,13 @@ read email
 echo "Enter the Mobile No "
 read mobileNo
 
+echo "Enter the Password "
+read password
+
 regex=^[A-Z][a-z]{1,}[^0-9]$
 emailRegex=^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]$
 mobileNoRegex=^[9][1][[:space:]][6-9]{1}[0-9]{9}$
+passwordRegex=^[a-zA-Z0-9]{8}
 
 if [[ $firstName =~ $regex ]]
 then
@@ -42,4 +46,11 @@ then
 	echo "Valid Mobile No"
 else
 	echo "Invalid Mobile No"
+fi
+
+if [[ $password =~ $passwordRegex ]]
+then
+	echo "Valid Password"
+else
+	echo "Invalid Password"
 fi
